@@ -1,3 +1,5 @@
+[<img src="https://raw.githubusercontent.com/Raymo111/Raymo111/master/intro.gif" alt="👋 I use Arch BTW" title="👋 I use Arch BTW"/>]
+
 ## I use Arch btw
 
 ### Долго выбираешь дистрибутив линукса? Лучше выбери маме цветы

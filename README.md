@@ -11,6 +11,7 @@
 
 ## 🔧 Инструменты
 ![](https://img.shields.io/badge/OS-Arch_Linux-informational?style=flat&logo=archlinux&logoColor=0db9d7&color=0e0557&labelColor=011627)
+![](https://img.shields.io/badge/Shell-Fish-informational?style=flat&logo=gnu-bash&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Editor-PHP_Storm-informational?style=flat&logo=phpstorm&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Code-PHP-informational?style=flat&logo=php&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Code-JavaScript-informational?style=flat&logo=javascript&logoColor=0db9d7&color=0e0557&labelColor=011627)
@@ -19,7 +20,6 @@
 ![](https://img.shields.io/badge/Code-Make-informational?style=flat&logo=cmake&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Code-Vue-informational?style=flat&logo=vue.js&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Code-React-informational?style=flat&logo=React&logoColor=0db9d7&color=0e0557&labelColor=011627)
-![](https://img.shields.io/badge/Shell-Fish-informational?style=flat&logo=gnu-bash&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Data-PostgreSQL-informational?style=flat&logo=postgresql&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Data-MariaDB-informational?style=flat&logo=mariadb&logoColor=0db9d7&color=0e0557&labelColor=011627)
 ![](https://img.shields.io/badge/Data-Redis-informational?style=flat&logo=redis&logoColor=0db9d7&color=0e0557&labelColor=011627)

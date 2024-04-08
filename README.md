@@ -14,7 +14,7 @@
 
 ## 🔧 Инструменты
 
-![ArchLinux](https://img.shields.io/badge/OS-Arch_Linux-informational?style=for-the-badge&logo=archlinux&logoColor=BD93F9&color=FFB86C&labelColor=282A36)
+![ArchLinux](https://img.shields.io/badge/OS-Arch_Linux-informational?style=for-the-badge&logo=archlinux&logoColor=BD93F9&color=fff9dd&labelColor=282A36)
 ![Fish](https://img.shields.io/badge/Shell-Fish-informational?style=for-the-badge&logo=gnu-bash&logoColor=BD93F9&color=FFB86C&labelColor=282A36)
 ![VSCode](https://img.shields.io/badge/Editor-VSCode-informational?style=for-the-badge&logo=visualstudiocode&logoColor=BD93F9&color=FFB86C&labelColor=282A36)
 
@@ -49,4 +49,4 @@
 
 ## 👀 Типо хвастаюсь (было бы чем)
 
-<img height="202px" style="border: 2px, solid, red;" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arsolitt&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=6&exclude_repo=,Redventures-Movie-Quotes&text_color=fff&icon_color=fff&bg_color=011627,011627,0db9d7&theme=white"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt)](https://leetcode.com/Arsolitt)
+<img height="202px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arsolitt&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=010101&bg_color=fff9dd&show_icons=true"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt)

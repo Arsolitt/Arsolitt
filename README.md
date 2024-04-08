@@ -49,4 +49,4 @@
 
 ## 👀 Типо хвастаюсь (было бы чем)
 
-<img height="202px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arsolitt&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=010101&bg_color=f2e9c2&show_icons=true"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt)
+<img height="202px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arsolitt&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=010101&bg_color=fff9dd&show_icons=true"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt)

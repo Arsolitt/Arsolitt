@@ -21,8 +21,8 @@
 ![Python](https://img.shields.io/badge/Lang-Python-informational?style=for-the-badge&logo=python&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![JS](https://img.shields.io/badge/Lang-JavaScript-informational?style=for-the-badge&logo=javascript&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![TS](https://img.shields.io/badge/Lang-TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+<!-- ![PHP](https://img.shields.io/badge/Lang-PHP-informational?style=for-the-badge&logo=php&logoColor=BD93F9&color=f2e9c2&labelColor=282A36) -->
 
-![PHP](https://img.shields.io/badge/Lang-PHP-informational?style=for-the-badge&logo=php&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
 ![PostgreSQL](https://img.shields.io/badge/Data-PostgreSQL-informational?style=for-the-badge&logo=postgresql&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![MariaDB](https://img.shields.io/badge/Data-MariaDB-informational?style=for-the-badge&logo=mariadb&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
@@ -31,7 +31,8 @@
 
 ![React](https://img.shields.io/badge/Technology-React-informational?style=for-the-badge&logo=React&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![NextJS](https://img.shields.io/badge/Technology-NextJS-informational?style=for-the-badge&logo=nextdotjs&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Laravel](https://img.shields.io/badge/Technology-Laravel-informational?style=for-the-badge&logo=laravel&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+<!-- ![Laravel](https://img.shields.io/badge/Technology-Laravel-informational?style=for-the-badge&logo=laravel&logoColor=BD93F9&color=f2e9c2&labelColor=282A36) -->
+
 ![Bun](https://img.shields.io/badge/Technology-Bun-informational?style=for-the-badge&logo=bun&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![NodeJS](https://img.shields.io/badge/Technology-NodeJS-informational?style=for-the-badge&logo=nodedotjs&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 

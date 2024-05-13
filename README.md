@@ -41,7 +41,8 @@
 <!-- ![KeepassXC](https://img.shields.io/badge/Tooling-KeepassXC-informational?style=for-the-badge&logo=keepassxc&logoColor=BD93F9&color=f2e9c2&labelColor=282A36) -->
 
 ![Docker](https://img.shields.io/badge/Infrastructure-Docker-informational?style=for-the-badge&logo=docker&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![DockerSwarm](https://img.shields.io/badge/Infrastructure-DockerSwarm-informational?style=for-the-badge&logo=docker&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![K3S](https://img.shields.io/badge/Infrastructure-Rancher_K3S-informational?style=for-the-badge&logo=k3s&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![K8S](https://img.shields.io/badge/Infrastructure-Kubernetes-informational?style=for-the-badge&logo=kubernetes&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![Nginx](https://img.shields.io/badge/Infrastructure-Nginx-informational?style=for-the-badge&logo=nginx&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![Traefik](https://img.shields.io/badge/Infrastructure-Traefik-informational?style=for-the-badge&logo=traefikproxy&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![Cloudflare](https://img.shields.io/badge/Infrastructure-Cloudflare-informational?style=for-the-badge&logo=cloudflare&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)

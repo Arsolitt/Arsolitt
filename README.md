@@ -16,6 +16,12 @@
 - Мне мерж реквест и моему чинчопе тоже
 - Сине-зеленый деплой, это когда девовпс после выкладки то синий то зеленый
 
+
+```
+Deprecated is now deprecated. 
+Please, use deprecated instead of deprecated.
+```
+
 ## 🔧 Инструменты
 
 ![ArchLinux](https://img.shields.io/badge/OS-Arch_Linux-informational?style=for-the-badge&logo=archlinux&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)

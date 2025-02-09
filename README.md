@@ -14,12 +14,16 @@
 - Не будешь читать книжки - попадёшь во вротенд
 - Добрые гномы гоняют нули и единицы по проводам
 - Мне мерж реквест и моему чинчопе тоже
-- Сине-зеленый деплой, это когда девовпс после выкладки то синий то зеленый
+- Сине-зеленый деплой, это когда девовпс то синий, то зеленый
 
 
 ```
 Deprecated is now deprecated. 
 Please, use deprecated instead of deprecated.
+```
+
+```
+don’t care. CURSE OF RA 𓀀 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈 𓀉 𓀊 𓀋 𓀌 𓀍 𓀎 𓀏 𓀐 𓀑 𓀒 𓀓 𓀔 𓀕 𓀖 𓀗 𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞 𓀟 𓀠 𓀡 𓀢 𓀣 𓀤 𓀥 𓀦 𓀧 𓀨 𓀩 𓀪 𓀫 𓀬 𓀭 𓀮 𓀯 𓀰 𓀱 𓀲 𓀳 𓀴 𓀵 𓀶 𓀷 𓀸 𓀹 𓀺 𓀻 𓀼 𓀽 𓀾 𓀿 𓁀 𓁁 𓁂 𓁃 𓁄 𓁅 𓁆 𓁇 𓁈 𓁉 𓁊 𓁋 𓁌 𓁍 𓁎 𓁏 𓁐 𓁑 𓀄 𓀅 𓀆
 ```
 
 ## 🔧 Инструменты
@@ -31,26 +35,24 @@ Please, use deprecated instead of deprecated.
 ![Go](https://img.shields.io/badge/Lang-Go-informational?style=for-the-badge&logo=go&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![TS](https://img.shields.io/badge/Lang-TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
-![PostgreSQL](https://img.shields.io/badge/Data-PostgreSQL-informational?style=for-the-badge&logo=postgresql&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![MySQL](https://img.shields.io/badge/Data-MySQL-informational?style=for-the-badge&logo=mysql&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Redis](https://img.shields.io/badge/Data-Redis-informational?style=for-the-badge&logo=redis&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Dragonfly](https://img.shields.io/badge/Data-Dragonfly-informational?style=for-the-badge&logo=amazondynamodb&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-
 ![React](https://img.shields.io/badge/UI-React-informational?style=for-the-badge&logo=React&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![NextJS](https://img.shields.io/badge/UI-NextJS-informational?style=for-the-badge&logo=nextdotjs&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
-![NodeJS](https://img.shields.io/badge/Runtime-NodeJS-informational?style=for-the-badge&logo=nodedotjs&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![PostgreSQL](https://img.shields.io/badge/Data-PostgreSQL-informational?style=for-the-badge&logo=postgresql&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![Redis](https://img.shields.io/badge/Data-Redis-informational?style=for-the-badge&logo=redis&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![ClickHouse](https://img.shields.io/badge/Data-ClichHouse-informational?style=for-the-badge&logo=clickhouse&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
 ![Docker](https://img.shields.io/badge/OPS-Docker-informational?style=for-the-badge&logo=docker&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![K8S](https://img.shields.io/badge/OPS-Kubernetes-informational?style=for-the-badge&logo=kubernetes&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Cloudflare](https://img.shields.io/badge/OPS-Cloudflare-informational?style=for-the-badge&logo=cloudflare&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Github_Actions](https://img.shields.io/badge/OPS-GithubActions-informational?style=for-the-badge&logo=githubactions&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![Gitlab_CI](https://img.shields.io/badge/OPS-Gitlab_CI-informational?style=for-the-badge&logo=gitlab&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
-![Grafana](https://img.shields.io/badge/Observ-Grafana-informational?style=for-the-badge&logo=grafana&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Loki](https://img.shields.io/badge/Observ-Loki-informational?style=for-the-badge&logo=logstash&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Prometheus](https://img.shields.io/badge/Observ-Prometheus-informational?style=for-the-badge&logo=prometheus&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
-![Victoria Metrics](https://img.shields.io/badge/Observ-Victoria_Metrics-informational?style=for-the-badge&logo=victoriametrics&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![Grafana](https://img.shields.io/badge/SRE-Grafana-informational?style=for-the-badge&logo=grafana&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![Loki](https://img.shields.io/badge/SRE-Loki-informational?style=for-the-badge&logo=logstash&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![Prometheus](https://img.shields.io/badge/SRE-Prometheus-informational?style=for-the-badge&logo=prometheus&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+
+![ZeroTrust](https://img.shields.io/badge/Sec-ZeroTrust-informational?style=for-the-badge&logo=securityscorecard&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![NGFW](https://img.shields.io/badge/Sec-NGFW-informational?style=for-the-badge&logo=pfsense&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
+![SSO](https://img.shields.io/badge/Sec-SSO-informational?style=for-the-badge&logo=authentik&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
 ## 👀 Типо хвастаюсь (было бы чем)
 

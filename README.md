@@ -55,6 +55,4 @@ don’t care. CURSE OF RA 𓀀 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈 𓀉 𓀊
 ![NGFW](https://img.shields.io/badge/Sec-NGFW-informational?style=for-the-badge&logo=pfsense&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 ![SSO](https://img.shields.io/badge/Sec-SSO-informational?style=for-the-badge&logo=authentik&logoColor=BD93F9&color=f2e9c2&labelColor=282A36)
 
-## 👀 Типо хвастаюсь (было бы чем)
-
-<img height="202px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=arsolitt&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=010101&bg_color=fff9dd&show_icons=true"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt)
+<img height="202px" src="https://github-readme-stats-gilt-theta-88.vercel.app/api/top-langs/?username=arsolitt&hide=html,php,blade,smarty,mustache&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=010101&bg_color=fff9dd&show_icons=true"/> [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt)

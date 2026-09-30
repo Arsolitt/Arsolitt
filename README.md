@@ -1,4 +1,4 @@
-# I use Arch BTW
+# I use MacOS BTW
 
 ## Долго выбираешь дистрибутив линукса? Лучше выбери маме цветы
 
@@ -17,54 +17,50 @@
 - Сине-зеленый деплой, это когда девопс то синий, то зеленый
 - Replicate your replications while you distribute your distributions
 
-
-```
-Deprecated is now deprecated. 
+```text
+Deprecated is now deprecated.
 Please, use deprecated instead of deprecated.
 ```
 
-```
+```text
 don’t care. CURSE OF RA 𓀀 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈 𓀉 𓀊 𓀋 𓀌 𓀍 𓀎 𓀏 𓀐 𓀑 𓀒 𓀓 𓀔 𓀕 𓀖 𓀗 𓀘 𓀙 𓀚 𓀛 𓀜 𓀝 𓀞 𓀟 𓀠 𓀡 𓀢 𓀣 𓀤 𓀥 𓀦 𓀧 𓀨 𓀩 𓀪 𓀫 𓀬 𓀭 𓀮 𓀯 𓀰 𓀱 𓀲 𓀳 𓀴 𓀵 𓀶 𓀷 𓀸 𓀹 𓀺 𓀻 𓀼 𓀽 𓀾 𓀿 𓁀 𓁁 𓁂 𓁃 𓁄 𓁅 𓁆 𓁇 𓁈 𓁉 𓁊 𓁋 𓁌 𓁍 𓁎 𓁏 𓁐 𓁑 𓀄 𓀅 𓀆
 ```
 
-## 🛠 Чем по жизни промышляю
+## 🛠 Цирковые номера
 
-- Затаскиваю DevOps в стартапы через боль и страдания разрабов
-- Bare metal Kubernetes — облака это для тех, кто читает документацию
+- Пердолинг с сетями как смысл жизни (не тот networking о которым вы подумали)
+- Проклятые сетапы baremetal k8s поверх гигабитного L3 и не только
 - Selfhosting & homelab — зачем платить за облако, если можно бесплатно не спать по ночам
-- Пилю тулинг на Go и Rust, потому что баш не осилил
 
-## 🔧 Инструменты
+## 🔧 Палки-копалки
 
-![ArchLinux](https://img.shields.io/badge/OS-Arch_Linux-informational?style=for-the-badge&logo=archlinux&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
-![Fish](https://img.shields.io/badge/Shell-Fish-informational?style=for-the-badge&logo=gnu-bash&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
-![VSCode](https://img.shields.io/badge/Editor-VSCode-informational?style=for-the-badge&logo=vscodium&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
-![OpenCode](https://img.shields.io/badge/Editor-OpenCode-informational?style=for-the-badge&logo=claude&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
+![macOS](https://img.shields.io/badge/OS-macOS-informational?style=for-the-badge&logo=apple&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
+![Fish](https://img.shields.io/badge/Shell-Fish-informational?style=for-the-badge&logo=fishshell&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
+![oh my pi](https://img.shields.io/badge/Editor-oh_my_pi-informational?style=for-the-badge&logo=pi&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
+![Neovim](https://img.shields.io/badge/Editor-Neovim-informational?style=for-the-badge&logo=neovim&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
 
 ![Go](https://img.shields.io/badge/Lang-Go-informational?style=for-the-badge&logo=go&logoColor=EDE9FE&color=A78BFA&labelColor=0F0F1A)
 ![Rust](https://img.shields.io/badge/Lang-Rust-informational?style=for-the-badge&logo=rust&logoColor=EDE9FE&color=A78BFA&labelColor=0F0F1A)
-![TS](https://img.shields.io/badge/Lang-TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=EDE9FE&color=A78BFA&labelColor=0F0F1A)
+![TypeScript](https://img.shields.io/badge/Lang-TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=EDE9FE&color=A78BFA&labelColor=0F0F1A)
 
 ![PostgreSQL](https://img.shields.io/badge/Data-PostgreSQL-informational?style=for-the-badge&logo=postgresql&logoColor=F3E8FF&color=C084FC&labelColor=0F0F1A)
 ![ClickHouse](https://img.shields.io/badge/Data-ClickHouse-informational?style=for-the-badge&logo=clickhouse&logoColor=F3E8FF&color=C084FC&labelColor=0F0F1A)
 
-![K8S](https://img.shields.io/badge/OPS-Kubernetes-informational?style=for-the-badge&logo=kubernetes&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
-![Gitlab_CI](https://img.shields.io/badge/OPS-Gitlab_CI-informational?style=for-the-badge&logo=gitlab&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
-![Docker](https://img.shields.io/badge/OPS-Docker-informational?style=for-the-badge&logo=docker&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
+![Kubernetes](https://img.shields.io/badge/OPS-Kubernetes-informational?style=for-the-badge&logo=kubernetes&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
+![Flux CD](https://img.shields.io/badge/OPS-Flux_CD-informational?style=for-the-badge&logo=flux&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
+![OpenTofu](https://img.shields.io/badge/OPS-OpenTofu-informational?style=for-the-badge&logo=opentofu&logoColor=FAE8FF&color=D946EF&labelColor=0F0F1A)
 
 ![Grafana](https://img.shields.io/badge/SRE-Grafana-informational?style=for-the-badge&logo=grafana&logoColor=FCE7F3&color=EC4899&labelColor=0F0F1A)
-![VictoriaMetrics](https://img.shields.io/badge/SRE-Victoria_Metrics-informational?style=for-the-badge&logo=victoriametrics&logoColor=FCE7F3&color=EC4899&labelColor=0F0F1A)
-![VictoriaLogs](https://img.shields.io/badge/SRE-Victoria_Logs-informational?style=for-the-badge&logo=victoriametrics&logoColor=FCE7F3&color=EC4899&labelColor=0F0F1A)
+![Victoria stack](https://img.shields.io/badge/SRE-Victoria_Stack-informational?style=for-the-badge&logo=victoriametrics&logoColor=FCE7F3&color=EC4899&labelColor=0F0F1A)
 
-![SSO](https://img.shields.io/badge/Sec-SSO-informational?style=for-the-badge&logo=authentik&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
-![ZeroTrustVPN](https://img.shields.io/badge/Sec-ZeroTrust_VPN-informational?style=for-the-badge&logo=tailscale&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
-![NGFW](https://img.shields.io/badge/Sec-NGFW-informational?style=for-the-badge&logo=pfsense&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
+![Cilium](https://img.shields.io/badge/NET-Cilium-informational?style=for-the-badge&logo=cilium&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
+![NetBird / AmneziaWG](https://img.shields.io/badge/NET-NetBird_/_AmneziaWG-informational?style=for-the-badge&logo=wireguard&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
+![ZITADEL](https://img.shields.io/badge/Sec-ZITADEL-informational?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJtMTA2IDI2OCAxMCAzOS00OSA0OSA2NyAxOCAxMCAzOS0xNDUtMzl6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZFNEU2Ii8+PHBhdGggZD0ibTQxMiAxNDUtMzktMTAtMTgtNjctNDkgNDktMzktMTBMMzczIDB6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZFNEU2Ii8+PHBhdGggZD0ibTM2NyA0NzMgMjgtMjggNjcgMTgtMTgtNjcgMjgtMjggMzkgMTQ1eiIgc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRTRFNiIvPjxwYXRoIGQ9Im0yNDggNDkxLTktODkgNjAgMTZ6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZFNEU2Ii8+PHBhdGggZD0ibTE0OSAxNTYgMzcgODEgNDQtNDR6IiBzdHlsZT0iZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZFNEU2Ii8+PHBhdGggZD0ibTQ4OSAyNDYtODktOSAxNiA2MHoiIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiNGRkU0RTYiLz48cGF0aCBkPSJNNDI2IDM5NGMtMi0xMC0xMC0xNi0yMC0xNy0xLS4zLTMtMS01LTNsLTUtMjBjMC0yLjUtNCAxLTYgOC01IDEzLTE2IDEwLTI2LTMtMTItMTYtMjAtMjgtMTYtMTIgMy0yMCAxNi0xNiAyOCAyIDggOCAxNCAxNSAxNmwtLjhzNy42IDEwIDljLjggMiAxIDUgMiA3LjggMy44IDMgMiA2IDEgNS0yIDctMiA3bC44LS4yYy0yIDEtNCAzLTUgNWwuMy0xcy0zIDMtOSAzbC0xNzMtNDdjLTQtMS04LTMtMTItNC05LTQtMTEtOS0xMS0xMi4zLTIgMS02IDUtMTAgNS02IDExLTEzIDE4LTIxIDAgMCAwLS4yLS4ybDg5LTg5YzgtOCAxNi0xNSAyMi0yMCAxLTEgMy0yIDQtMyAyLTIgNS00IDctNGgtLjNzMTAtMyAxNCA5Yy41IDIgMiAxMCAyIDE1IC4zIDItLjMgMy0xIDUtOCA1LTEyIDE1LTkgMjUgMyAxMiAxNiAyMCAyOCAxNiAxMi0zIDIwLTE2IDE2LTI4LTItNy03LTEzLTE0LTE2bC44LS4zcy03LTItOS01Yy0yLTMtNS0xMi02LTE0LTItNyA1LTE1IDUtMTVsLS44YzUtNiA3LTE0IDUtMjEtMy0xMi0xNi0yMC0yOC0xNi0xMiAzLTE5IDE0LTE3IDI2bC0uOC0uOHMyIDktNCAxNWMtMSAxLTIgMy00IDQtNCA1LTEwIDExLTE2IDE4TDE5NCAyODhjLTYgNi0xMiAxMS0xNyAxNS03IDUtMTMgNS0xNyA1LS41IDAtLjggMC0xLS4yLS41IDAtLjgtLjItLjgtLjJsLjNjLTIgMC00LjMtNiAuOC0xMiAzLTIwIDE2LTE2IDI4czE2IDIwIDI4IDE2YzQtMSA4LTQgMTEtNyAyLS44IDctMSAxMy0uMiA4IDEgMTcgMyAyNyA2IDQuOCA3IDIgMTEgM2w5NSAyNmMzIC45IDYgMiA5IDIgMTMgNCAzOCAxMCAzOSAxMSAxMSAzIDEwIDggMTAgOGwuNS0yYzAgMS4zIDIuNSA0IDMgMTIgMTYgMjAgMjggMTYgMTMtMyAyMC0xNiAxNy0yOCIgc3R5bGU9ImZpbGw6I0ZGRTRFNiIvPjwvc3ZnPg==&logoColor=FFE4E6&color=F472B6&labelColor=0F0F1A)
 
+![Статистика](assets/stats.svg) ![Языки](assets/top-langs.svg)
 
+![Активность за последние 31 день](assets/activity-graph.svg)
 
-<img height="202px" src="https://github-readme-stats-gilt-theta-88.vercel.app/api/top-langs/?username=arsolitt&hide=html,php,blade,smarty,mustache&hide_title=true&hide_border=true&layout=compact&langs_count=8&exclude_repo=,Redventures-Movie-Quotes&theme=dark&text_color=C084FC&bg_color=0F0F1A&show_icons=true&title_color=818CF8"/> ![GitHub Streak](https://streak-stats.demolab.com?user=Arsolitt&theme=dark&background=0F0F1A&ring=A78BFA&fire=EC4899&currStreakLabel=C084FC&sideLabels=818CF8&currStreakNum=F472B6&sideNums=A78BFA&dates=6366F1&stroke=1E1B4B&border=00000000)
+![Стрик](assets/streak.svg)
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=Arsolitt&bg_color=0F0F1A&color=C084FC&line=EC4899&point=818CF8&area=true&area_color=A78BFA&hide_border=true)
-<!-- [![Leetcode Stats](https://leetcard.jacoblin.cool/Arsolitt?border=0&radius=5&theme=forest)](https://leetcode.com/Arsolitt) -->
-
-![](https://komarev.com/ghpvc/?username=Arsolitt&color=A78BFA&style=for-the-badge&label=PROFILE+VIEWS)
+![Просмотры профиля](https://komarev.com/ghpvc/?username=Arsolitt&color=A78BFA&style=for-the-badge&label=PROFILE+VIEWS)

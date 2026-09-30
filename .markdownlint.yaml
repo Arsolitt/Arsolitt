@@ -1,0 +1,4 @@
+# Profile README specific: long lines are intentional and cannot be wrapped.
+#  - badge rows are single-line image references (shields.io URLs),
+#  - the CURSE OF RA hieroglyph run and the long inline-code jokes stay verbatim.
+MD013: false

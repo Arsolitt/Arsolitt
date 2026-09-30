@@ -1,21 +1,28 @@
-# Regenerates the self-hosted SVG cards in assets/ (activity graph, top languages,
-# stats) straight from the GitHub API, so the profile no longer depends on any
-# third-party card service. Runs daily, plus on demand.
+# Regenerates the self-hosted SVG cards in assets/ (activity graph, stats and
+# languages, streak) straight from the GitHub API, so the profile no longer
+# depends on any third-party card service. Runs daily, plus on demand.
 #
-# Token: set a repository secret named STATS_TOKEN holding a *classic* personal
-# access token with the `repo` and `read:user` scopes. `repo` is what makes
-# private-repository data (languages, stars, commit counts) visible. Without that
-# secret the workflow falls back to the built-in GITHUB_TOKEN, which only sees
-# public repositories and therefore renders public-only numbers.
+# Token: set a repository secret named STATS_TOKEN, otherwise the workflow falls
+# back to the built-in GITHUB_TOKEN, which only sees public repositories and
+# therefore renders public-only numbers (and with a languages card that is 86% of
+# the bytes, that is a visible downgrade). Either token type works:
+#   * fine-grained PAT — repository access "All repositories", permissions
+#     read-only: Contents, Issues, Pull requests, Metadata;
+#   * classic PAT — scopes `repo` and `read:user`.
+# Contributions (the stats and streak cards) only include private activity if the
+# owner's profile also has "Include private contributions on my profile" enabled
+# under Settings -> Profile -> Contribution settings; without it
+# `contributionsCollection` reports public activity only, whatever the token can
+# read.
 #
 # Keepalive: GitHub disables `schedule` triggers in public repositories when "no
 # repository activity has occurred in 60 days", which would silently kill an
 # unattended profile refresh. Two independent defences:
 #   1. Every run produces a real content change: the activity graph window
 #      shifts by a day on its own, and the `updated <YYYY-MM-DD>` marker in
-#      stats.svg is guaranteed to differ from the previous run even if the API
-#      data did not move. The commit below therefore lands on every run, and the
-#      default branch keeps receiving pushes.
+#      stats-langs.svg is guaranteed to differ from the previous run even if
+#      the API data did not move. The commit below therefore lands on every run,
+#      and the default branch keeps receiving pushes.
 #   2. The "Keep the scheduled trigger alive" step pre-emptively re-enables this
 #      workflow through the API. Community tooling reports that this resets the
 #      inactivity counter even if pushes made with the workflow's own token are

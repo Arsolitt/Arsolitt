@@ -2,8 +2,8 @@
 /**
  * Generates the self-hosted profile cards used by README.md:
  *   assets/activity-graph.svg  - contributions for the last 31 days
- *   assets/top-langs.svg       - languages by bytes across owned, non-fork repos
- *   assets/stats.svg           - stars / commits / PRs / issues / reviews / followers
+ *   assets/stats-langs.svg     - statistics next to top languages in one image,
+ *                                so the pair cannot wrap on narrow columns
  *   assets/streak.svg          - current/longest streak and all-time contributions
  *
  * No dependencies (Node 22, global fetch). Any non-2xx HTTP response or GraphQL
@@ -301,6 +301,9 @@ const svgDocument = ({
   title,
   description = 'Self-hosted card rendered by scripts/generate-profile-assets.mjs',
   defs,
+  // Single rounded panel by default; the combined stats+languages card draws
+  // one panel per half and passes them in here instead.
+  background = `  <rect class="bg" x="0" y="0" width="${width}" height="${height}" rx="${CARD_RADIUS}"/>`,
   body,
 }) => `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(title)}">
@@ -310,7 +313,7 @@ const svgDocument = ({
     <style>${STYLE}</style>
 ${defs}
   </defs>
-  <rect class="bg" x="0" y="0" width="${width}" height="${height}" rx="${CARD_RADIUS}"/>
+${background}
 ${body}
 </svg>
 `;
@@ -399,61 +402,57 @@ const renderActivityGraph = (days) => {
   });
 };
 
-const renderTopLanguages = (languages) => {
-  // 436 wide so that, next to the 436px stats card and the ~4px space between
-  // two inline images in a README paragraph, the pair totals 876 and lines up
-  // with the full-width cards, which use the same 876; the 8 rows stay readable
-  // and the height/row count are unchanged.
-  const W = 436;
+// The stats and top-languages panels ship as one 876x200 image: GitHub's README
+// column is responsive, and two inline images wrap onto separate lines as soon
+// as the column is narrower than their combined width, while a single image
+// scales down and keeps the panels side by side. Each half keeps its own
+// 436x200 rounded card, separated by a 4px transparent gutter that lets the page
+// background show through exactly like the previous side-by-side pair.
+const PANEL_WIDTH = 436;
+const PANEL_HEIGHT = 200;
+const PANEL_GAP = 4;
+
+/** Language panel internals, drawn into the shared canvas at `x0`. */
+const languagesPanel = (languages, x0) => {
   const pad = { left: 22, right: 22, top: 12, bottom: 12 };
   const pitch = 22;
   const bar = { height: 6, offset: 13 };
-  const H = pad.top + languages.length * pitch + pad.bottom;
-  const trackWidth = W - pad.left - pad.right;
+  const trackWidth = PANEL_WIDTH - pad.left - pad.right;
   const barWidth = (percentage) => Math.max(6, Math.min(trackWidth, (percentage / 100) * trackWidth));
-  const rampEnd = pad.left + barWidth(languages[0].percentage);
+  const rampEnd = x0 + pad.left + barWidth(languages[0].percentage);
 
   const rows = languages
     .map((language, index) => {
       const top = pad.top + index * pitch;
       const width = barWidth(language.percentage);
       return [
-        `  <text class="text" x="${pad.left}" y="${(top + 9).toFixed(2)}" font-size="12">${escapeXml(language.name)}</text>`,
-        `  <text class="primary" x="${W - pad.right}" y="${(top + 9).toFixed(2)}" font-size="11" text-anchor="end" fill-opacity="0.9">${escapeXml(
+        `  <text class="text" x="${x0 + pad.left}" y="${(top + 9).toFixed(2)}" font-size="12">${escapeXml(language.name)}</text>`,
+        `  <text class="primary" x="${x0 + PANEL_WIDTH - pad.right}" y="${(top + 9).toFixed(2)}" font-size="11" text-anchor="end" fill-opacity="0.9">${escapeXml(
           `${language.percentage.toFixed(1)}%`,
         )}</text>`,
-        `  <rect class="track" x="${pad.left}" y="${(top + bar.offset).toFixed(2)}" width="${trackWidth}" height="${bar.height}" rx="${(
+        `  <rect class="track" x="${x0 + pad.left}" y="${(top + bar.offset).toFixed(2)}" width="${trackWidth}" height="${bar.height}" rx="${(
           bar.height / 2
         ).toFixed(2)}"/>`,
-        `  <rect x="${pad.left}" y="${(top + bar.offset).toFixed(2)}" width="${width.toFixed(2)}" height="${bar.height}" rx="${(
+        `  <rect x="${x0 + pad.left}" y="${(top + bar.offset).toFixed(2)}" width="${width.toFixed(2)}" height="${bar.height}" rx="${(
           bar.height / 2
         ).toFixed(2)}" fill="url(#language-bar)"/>`,
       ].join('\n');
     })
     .join('\n');
 
-  return svgDocument({
-    width: W,
-    height: H,
-    title: 'Most used languages by bytes across owned repositories',
-    description:
-      'Shares of the top 8 languages by bytes across owned, non-fork repositories; languages below the top 8 are omitted.',
-    defs: `    <linearGradient id="language-bar" gradientUnits="userSpaceOnUse" x1="${pad.left}" y1="0" x2="${rampEnd.toFixed(
+  return {
+    defs: `    <linearGradient id="language-bar" gradientUnits="userSpaceOnUse" x1="${(x0 + pad.left).toFixed(2)}" y1="0" x2="${rampEnd.toFixed(
       2,
     )}" y2="0">
       <stop offset="0%" stop-color="${COLOR.primary}"/>
       <stop offset="100%" stop-color="${COLOR.accent}"/>
     </linearGradient>`,
     body: rows,
-  });
+  };
 };
 
-const renderStats = (stats, asOf) => {
-  // 436 wide, the same as the top-langs card it sits next to: together with the
-  // ~4px inline-image gap the pair totals 876 and shares one right edge with the
-  // full-width cards below.
-  const W = 436;
-  const H = 200;
+/** Stats panel internals, drawn into the shared canvas at `x0`. */
+const statsPanel = (stats, asOf, x0) => {
   const pad = { left: 26, right: 26, top: 26 };
   const pitch = 25;
   const rows = stats
@@ -463,14 +462,12 @@ const renderStats = (stats, asOf) => {
       const separator =
         index === stats.length - 1
           ? ''
-          : `\n  <line class="grid" x1="${pad.left}" y1="${(top + pitch - 4).toFixed(2)}" x2="${W - pad.right}" y2="${(
-              top +
-              pitch -
-              4
-            ).toFixed(2)}" stroke-opacity="0.12"/>`;
+          : `\n  <line class="grid" x1="${x0 + pad.left}" y1="${(top + pitch - 4).toFixed(2)}" x2="${
+              x0 + PANEL_WIDTH - pad.right
+            }" y2="${(top + pitch - 4).toFixed(2)}" stroke-opacity="0.12"/>`;
       return [
-        `  <text class="text" x="${pad.left}" y="${baseline.toFixed(2)}" font-size="13">${escapeXml(stat.label)}</text>`,
-        `  <text class="primary" x="${W - pad.right}" y="${baseline.toFixed(2)}" font-size="14" font-weight="600" text-anchor="end">${escapeXml(
+        `  <text class="text" x="${x0 + pad.left}" y="${baseline.toFixed(2)}" font-size="13">${escapeXml(stat.label)}</text>`,
+        `  <text class="primary" x="${x0 + PANEL_WIDTH - pad.right}" y="${baseline.toFixed(2)}" font-size="14" font-weight="600" text-anchor="end">${escapeXml(
           formatNumber(stat.value),
         )}</text>${separator}`,
       ].join('\n');
@@ -480,17 +477,27 @@ const renderStats = (stats, asOf) => {
   // The `updated <date>` marker is the keepalive hook described in the file
   // header: it makes every scheduled run produce a real content change while
   // staying deterministic for a given UTC day.
-  const updated = `  <text class="text" x="${W - pad.right}" y="189" font-size="10" text-anchor="end" fill-opacity="0.6">updated ${escapeXml(
-    asOf,
-  )}</text>`;
+  const updated = `  <text class="text" x="${
+    x0 + PANEL_WIDTH - pad.right
+  }" y="189" font-size="10" text-anchor="end" fill-opacity="0.6">updated ${escapeXml(asOf)}</text>`;
+
+  return { defs: '', body: `${rows}\n${updated}` };
+};
+
+const renderStatsLangs = (stats, languages, asOf) => {
+  const right = PANEL_WIDTH + PANEL_GAP;
+  const statsMarkup = statsPanel(stats, asOf, 0);
+  const languagesMarkup = languagesPanel(languages, right);
 
   return svgDocument({
-    width: W,
-    height: H,
-    title: 'GitHub statistics summary',
-    description: `Stars, commits, pull requests, issues, reviews and followers as of ${asOf} (UTC).`,
-    defs: '',
-    body: `${rows}\n${updated}`,
+    width: PANEL_WIDTH * 2 + PANEL_GAP,
+    height: PANEL_HEIGHT,
+    title: 'GitHub statistics and most used languages',
+    description: `Stars, commits, pull requests, issues, reviews and followers as of ${asOf} (UTC), next to the shares of the top 8 languages by bytes across owned, non-fork repositories; languages below the top 8 are omitted.`,
+    defs: languagesMarkup.defs,
+    background: `  <rect class="bg" x="0" y="0" width="${PANEL_WIDTH}" height="${PANEL_HEIGHT}" rx="${CARD_RADIUS}"/>
+  <rect class="bg" x="${right}" y="0" width="${PANEL_WIDTH}" height="${PANEL_HEIGHT}" rx="${CARD_RADIUS}"/>`,
+    body: `${statsMarkup.body}\n${languagesMarkup.body}`,
   });
 };
 
@@ -684,8 +691,7 @@ const main = async () => {
 
   const cards = [
     ['activity-graph.svg', renderActivityGraph(days)],
-    ['top-langs.svg', renderTopLanguages(languages)],
-    ['stats.svg', renderStats(stats, asOf)],
+    ['stats-langs.svg', renderStatsLangs(stats, languages, asOf)],
     ['streak.svg', renderStreak(history.days, streaks)],
   ];
 

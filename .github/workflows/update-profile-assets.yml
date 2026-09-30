@@ -1,0 +1,96 @@
+# Regenerates the self-hosted SVG cards in assets/ (activity graph, top languages,
+# stats) straight from the GitHub API, so the profile no longer depends on any
+# third-party card service. Runs daily, plus on demand.
+#
+# Token: set a repository secret named STATS_TOKEN holding a *classic* personal
+# access token with the `repo` and `read:user` scopes. `repo` is what makes
+# private-repository data (languages, stars, commit counts) visible. Without that
+# secret the workflow falls back to the built-in GITHUB_TOKEN, which only sees
+# public repositories and therefore renders public-only numbers.
+#
+# Keepalive: GitHub disables `schedule` triggers in public repositories when "no
+# repository activity has occurred in 60 days", which would silently kill an
+# unattended profile refresh. Two independent defences:
+#   1. Every run produces a real content change: the activity graph window
+#      shifts by a day on its own, and the `updated <YYYY-MM-DD>` marker in
+#      stats.svg is guaranteed to differ from the previous run even if the API
+#      data did not move. The commit below therefore lands on every run, and the
+#      default branch keeps receiving pushes.
+#   2. The "Keep the scheduled trigger alive" step pre-emptively re-enables this
+#      workflow through the API. Community tooling reports that this resets the
+#      inactivity counter even if pushes made with the workflow's own token are
+#      not counted as activity; it is a widely used hedge, not a documented
+#      guarantee.
+# GitHub never documented what "repository activity" means. The community-
+# established minimum is that pushes to the repository count and issue or pull
+# request comments do not; whether a push made with the workflow's own
+# GITHUB_TOKEN counts is undocumented. If the schedule is disabled anyway,
+# GitHub emails "[GitHub] The ... workflow will be disabled soon" first. Re-enable
+# it from Actions -> "Update profile assets" -> "Enable workflow", or run:
+#   gh workflow enable update-profile-assets.yml --repo Arsolitt/Arsolitt
+# Any later commit to the default branch also resets the inactivity clock.
+name: Update profile assets
+
+on:
+  schedule:
+    # Daily at 06:17 UTC.
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  # Only needed by the "Keep the scheduled trigger alive" step.
+  actions: write
+
+concurrency:
+  group: update-profile-assets
+  cancel-in-progress: false
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate profile assets
+        env:
+          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          PROFILE_USERNAME: Arsolitt
+        run: node scripts/generate-profile-assets.mjs
+
+      # The commit is deliberately authored by the Actions bot, whose noreply
+      # address is not connected to the owner's account. GitHub only credits a
+      # commit to the contribution graph when the author email is linked to that
+      # account, so these refreshes never inflate the owner's contributions or
+      # streak -- while still being pushes to the default branch, which is what
+      # keeps the schedule away from GitHub's 60-day inactivity disable.
+      - name: Commit refreshed assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets
+          if git diff --cached --quiet; then
+            echo 'Profile assets already up to date.'
+            exit 0
+          fi
+          git commit -m 'chore: refresh profile assets'
+          git push
+
+      # Belt and braces for the 60-day inactivity rule: re-enable this workflow
+      # even while it is still enabled. Community keepalive tooling (e.g.
+      # liskin/gh-workflow-keepalive, keepalive-workflow v2) reports that this
+      # resets the inactivity counter, though GitHub does not document it.
+      # Runs last so a permission problem here can never block the commit,
+      # and uses github.token so it depends only on `permissions` above and not
+      # on the scopes of STATS_TOKEN.
+      - name: Keep the scheduled trigger alive
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/update-profile-assets.yml/enable"

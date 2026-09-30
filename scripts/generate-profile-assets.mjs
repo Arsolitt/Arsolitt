@@ -41,6 +41,15 @@ const API = 'https://api.github.com';
 const TOKEN_MISSING =
   'Missing GH_TOKEN/GITHUB_TOKEN environment variable; refusing to render profile assets without API access.';
 
+// The languages card is dominated by private repositories (~86% of the account's
+// raw language bytes: 15.5 MB private vs 2.5 MB public on 2026-09-30). A token
+// that cannot read them renders much smaller numbers, and without this guard that
+// downgrade would land in the live cards without any error. The workflow sets
+// REQUIRE_PRIVATE_REPOS=1 to turn it into a hard failure; it stays opt-in so local
+// runs with a broad CLI token, which never hit the public-only case, are
+// unaffected.
+const REQUIRE_PRIVATE_REPOS = /^(1|true)$/i.test(process.env.REQUIRE_PRIVATE_REPOS ?? '');
+
 // ---------------------------------------------------------------- palette ---
 
 const COLOR = {
@@ -195,6 +204,7 @@ const repositoriesQuery = `
         }
         nodes {
           name
+          isPrivate
           stargazerCount
         }
       }
@@ -637,6 +647,21 @@ const main = async () => {
     fetchFollowers(),
     fetchAccountCreatedAt(),
   ]);
+
+  // `repos` holds owned, non-fork repositories (see repositoriesQuery);
+  // `isPrivate` reports whether this token can actually read them, so the guard
+  // fires exactly when a de-scoped or public-only token would silently shrink
+  // the languages card. Checked before the (many) history calls and before any
+  // file is written, so a failed run leaves assets/ untouched.
+  if (REQUIRE_PRIVATE_REPOS && !repos.some((repo) => repo.isPrivate)) {
+    throw new Error(
+      'REQUIRE_PRIVATE_REPOS is set, but no private non-fork repository is visible to this token, so the ' +
+        'languages card would be rendered from public repositories only. About 86% of this account\'s language ' +
+        'bytes are private (2026-09-30: 15.5 MB private vs 2.5 MB public), so the numbers would silently change ' +
+        'and overwrite the live cards. Rerun with a token that can read them: STATS_TOKEN is a fine-grained PAT ' +
+        'with repository access "All repositories" and read-only Contents, Issues, Pull requests, Metadata.',
+    );
+  }
 
   const days = window.days;
   if (days.length === 0) throw new Error('Contribution calendar returned no days');

@@ -2,10 +2,13 @@
 # languages, streak) straight from the GitHub API, so the profile no longer
 # depends on any third-party card service. Runs daily, plus on demand.
 #
-# Token: set a repository secret named STATS_TOKEN, otherwise the workflow falls
-# back to the built-in GITHUB_TOKEN, which only sees public repositories and
-# therefore renders public-only numbers (and with a languages card that is 86% of
-# the bytes, that is a visible downgrade). Either token type works:
+# Token: the workflow requires the repository secret STATS_TOKEN and hard-fails
+# without it -- there is deliberately no fallback to the built-in GITHUB_TOKEN,
+# which sees public repositories only and would silently downgrade the live cards
+# (the languages card alone is ~86% private bytes). The "Require STATS_TOKEN"
+# step checks the secret before the checkout, and the generate step sets
+# REQUIRE_PRIVATE_REPOS=1 so the script itself also refuses to render when the
+# token can no longer see the private repositories. Either token type works:
 #   * fine-grained PAT — repository access "All repositories", permissions
 #     read-only: Contents, Issues, Pull requests, Metadata;
 #   * classic PAT — scopes `repo` and `read:user`.
@@ -57,6 +60,24 @@ jobs:
   update-assets:
     runs-on: ubuntu-latest
     steps:
+      # Runs before the checkout: there is no fallback to the built-in token
+      # because it only sees public repositories, and a public-only render would
+      # silently overwrite the live cards (the languages card is ~86% private
+      # bytes). Failing here keeps a broken secret from looking like a
+      # successful refresh.
+      - name: Require STATS_TOKEN
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+        run: |
+          if [ -n "${STATS_TOKEN:-}" ]; then
+            exit 0
+          fi
+          echo '::error::STATS_TOKEN is missing or empty; refusing to regenerate the profile cards.'
+          echo 'Recreate the repository secret with a fine-grained PAT: repository access "All repositories", read-only permissions Contents, Issues, Pull requests, Metadata, then run:'
+          echo '  gh secret set STATS_TOKEN --repo Arsolitt/Arsolitt'
+          echo 'The built-in GITHUB_TOKEN sees public repositories only, so without STATS_TOKEN the languages card would silently lose ~86% of its bytes and the live cards would be downgraded to public-only numbers.'
+          exit 1
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -67,8 +88,14 @@ jobs:
 
       - name: Generate profile assets
         env:
-          GH_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          # No fallback: the script must never run on the built-in public-only
+          # token (the "Require STATS_TOKEN" step above already failed the job
+          # if the secret is empty).
+          GH_TOKEN: ${{ secrets.STATS_TOKEN }}
           PROFILE_USERNAME: Arsolitt
+          # Fails the run if the token cannot see the private repositories the
+          # languages card draws most of its bytes from.
+          REQUIRE_PRIVATE_REPOS: '1'
         run: node scripts/generate-profile-assets.mjs
 
       # The commit is deliberately authored by the Actions bot, whose noreply

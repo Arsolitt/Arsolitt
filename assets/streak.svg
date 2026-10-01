@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="876" height="160" viewBox="0 0 876 160" role="img" aria-label="Contribution streak over the account history">
   <title>Contribution streak over the account history</title>
-  <desc>Current and longest contribution streak plus all-time contributions from account creation to 2026-09-30 (UTC); a streak is an unbroken run of consecutive UTC days with at least one contribution, and the current streak is 0 once the latest contribution is older than yesterday.</desc>
+  <desc>Current and longest contribution streak plus all-time contributions from account creation to 2026-10-01 (UTC); a streak is an unbroken run of consecutive UTC days with at least one contribution, and the current streak is 0 once the latest contribution is older than yesterday.</desc>
   <defs>
     <style>
     .bg { fill: #0F0F1A; }
@@ -21,12 +21,12 @@
   <line class="grid" x1="300.00" y1="34" x2="300.00" y2="126" stroke-opacity="0.12"/>
   <line class="grid" x1="576.00" y1="34" x2="576.00" y2="126" stroke-opacity="0.12"/>
   <text class="secondary" x="162.00" y="46" font-size="12" text-anchor="middle" fill-opacity="0.85">Current streak</text>
-  <text class="accent" x="162.00" y="94" font-size="34" font-weight="600" text-anchor="middle">0<tspan class="secondary" font-size="14" fill-opacity="0.8"> days</tspan></text>
-  <text class="text" x="162.00" y="120" font-size="11" text-anchor="middle" fill-opacity="0.65">no active streak</text>
+  <text class="accent" x="162.00" y="94" font-size="34" font-weight="600" text-anchor="middle">1<tspan class="secondary" font-size="14" fill-opacity="0.8"> days</tspan></text>
+  <text class="text" x="162.00" y="120" font-size="11" text-anchor="middle" fill-opacity="0.65">Sep 30 – Sep 30</text>
   <text class="secondary" x="438.00" y="46" font-size="12" text-anchor="middle" fill-opacity="0.85">Longest streak</text>
   <text class="text" x="438.00" y="94" font-size="34" font-weight="600" text-anchor="middle">66<tspan class="secondary" font-size="14" fill-opacity="0.8"> days</tspan></text>
   <text class="text" x="438.00" y="120" font-size="11" text-anchor="middle" fill-opacity="0.65">Mar 26 – May 30</text>
   <text class="secondary" x="714.00" y="46" font-size="12" text-anchor="middle" fill-opacity="0.85">Total contributions</text>
-  <text class="text" x="714.00" y="94" font-size="34" font-weight="600" text-anchor="middle">4,197</text>
-  <text class="text" x="714.00" y="120" font-size="11" text-anchor="middle" fill-opacity="0.65">Mar 1, 2023 – Sep 30, 2026</text>
+  <text class="text" x="714.00" y="94" font-size="34" font-weight="600" text-anchor="middle">4,207</text>
+  <text class="text" x="714.00" y="120" font-size="11" text-anchor="middle" fill-opacity="0.65">Mar 1, 2023 – Oct 1, 2026</text>
 </svg>

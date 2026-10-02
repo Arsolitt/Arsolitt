@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="876" height="200" viewBox="0 0 876 200" role="img" aria-label="GitHub statistics and most used languages">
   <title>GitHub statistics and most used languages</title>
-  <desc>Stars, commits, pull requests, issues, reviews and followers as of 2026-10-01 (UTC), next to the shares of the top 8 languages by bytes across owned, non-fork repositories; languages below the top 8 are omitted.</desc>
+  <desc>Stars, commits, pull requests, issues, reviews and followers as of 2026-10-02 (UTC), next to the shares of the top 8 languages by bytes across owned, non-fork repositories; languages below the top 8 are omitted.</desc>
   <defs>
     <style>
     .bg { fill: #0F0F1A; }
@@ -15,7 +15,7 @@
     .point { fill: #EC4899; }
     .track { fill: #A78BFA; fill-opacity: 0.14; }
   </style>
-    <linearGradient id="language-bar" gradientUnits="userSpaceOnUse" x1="462.00" y1="0" x2="628.20" y2="0">
+    <linearGradient id="language-bar" gradientUnits="userSpaceOnUse" x1="462.00" y1="0" x2="628.13" y2="0">
       <stop offset="0%" stop-color="#818CF8"/>
       <stop offset="100%" stop-color="#EC4899"/>
     </linearGradient>
@@ -26,7 +26,7 @@
   <text class="primary" x="410" y="42.00" font-size="14" font-weight="600" text-anchor="end">40</text>
   <line class="grid" x1="26" y1="47.00" x2="410" y2="47.00" stroke-opacity="0.12"/>
   <text class="text" x="26" y="67.00" font-size="13">Commits (last year)</text>
-  <text class="primary" x="410" y="67.00" font-size="14" font-weight="600" text-anchor="end">1,637</text>
+  <text class="primary" x="410" y="67.00" font-size="14" font-weight="600" text-anchor="end">1,640</text>
   <line class="grid" x1="26" y1="72.00" x2="410" y2="72.00" stroke-opacity="0.12"/>
   <text class="text" x="26" y="92.00" font-size="13">Pull requests</text>
   <text class="primary" x="410" y="92.00" font-size="14" font-weight="600" text-anchor="end">48</text>
@@ -39,27 +39,27 @@
   <line class="grid" x1="26" y1="147.00" x2="410" y2="147.00" stroke-opacity="0.12"/>
   <text class="text" x="26" y="167.00" font-size="13">Followers</text>
   <text class="primary" x="410" y="167.00" font-size="14" font-weight="600" text-anchor="end">22</text>
-  <text class="text" x="410" y="189" font-size="10" text-anchor="end" fill-opacity="0.6">updated 2026-10-01</text>
+  <text class="text" x="410" y="189" font-size="10" text-anchor="end" fill-opacity="0.6">updated 2026-10-02</text>
   <text class="text" x="462" y="21.00" font-size="12">TypeScript</text>
   <text class="primary" x="854" y="21.00" font-size="11" text-anchor="end" fill-opacity="0.9">42.4%</text>
   <rect class="track" x="462" y="25.00" width="392" height="6" rx="3.00"/>
-  <rect x="462" y="25.00" width="166.20" height="6" rx="3.00" fill="url(#language-bar)"/>
+  <rect x="462" y="25.00" width="166.13" height="6" rx="3.00" fill="url(#language-bar)"/>
   <text class="text" x="462" y="43.00" font-size="12">Go</text>
   <text class="primary" x="854" y="43.00" font-size="11" text-anchor="end" fill-opacity="0.9">25.4%</text>
   <rect class="track" x="462" y="47.00" width="392" height="6" rx="3.00"/>
-  <rect x="462" y="47.00" width="99.64" height="6" rx="3.00" fill="url(#language-bar)"/>
+  <rect x="462" y="47.00" width="99.76" height="6" rx="3.00" fill="url(#language-bar)"/>
   <text class="text" x="462" y="65.00" font-size="12">JavaScript</text>
   <text class="primary" x="854" y="65.00" font-size="11" text-anchor="end" fill-opacity="0.9">13.4%</text>
   <rect class="track" x="462" y="69.00" width="392" height="6" rx="3.00"/>
-  <rect x="462" y="69.00" width="52.49" height="6" rx="3.00" fill="url(#language-bar)"/>
+  <rect x="462" y="69.00" width="52.46" height="6" rx="3.00" fill="url(#language-bar)"/>
   <text class="text" x="462" y="87.00" font-size="12">Python</text>
   <text class="primary" x="854" y="87.00" font-size="11" text-anchor="end" fill-opacity="0.9">7.6%</text>
   <rect class="track" x="462" y="91.00" width="392" height="6" rx="3.00"/>
-  <rect x="462" y="91.00" width="29.81" height="6" rx="3.00" fill="url(#language-bar)"/>
+  <rect x="462" y="91.00" width="29.80" height="6" rx="3.00" fill="url(#language-bar)"/>
   <text class="text" x="462" y="109.00" font-size="12">Shell</text>
   <text class="primary" x="854" y="109.00" font-size="11" text-anchor="end" fill-opacity="0.9">6.8%</text>
   <rect class="track" x="462" y="113.00" width="392" height="6" rx="3.00"/>
-  <rect x="462" y="113.00" width="26.64" height="6" rx="3.00" fill="url(#language-bar)"/>
+  <rect x="462" y="113.00" width="26.63" height="6" rx="3.00" fill="url(#language-bar)"/>
   <text class="text" x="462" y="131.00" font-size="12">Vue</text>
   <text class="primary" x="854" y="131.00" font-size="11" text-anchor="end" fill-opacity="0.9">1.8%</text>
   <rect class="track" x="462" y="135.00" width="392" height="6" rx="3.00"/>

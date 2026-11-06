@@ -1,4 +1,4 @@
-# I use MacOS BTW
+# Fuck MacOS. I use Arch BTW
 
 ## Долго выбираешь дистрибутив линукса? Лучше выбери маме цветы
 
@@ -34,7 +34,7 @@ don’t care. CURSE OF RA 𓀀 𓀁 𓀂 𓀃 𓀄 𓀅 𓀆 𓀇 𓀈 𓀉 𓀊
 
 ## 🔧 Палки-копалки
 
-![macOS](https://img.shields.io/badge/OS-macOS-informational?style=for-the-badge&logo=apple&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
+![Arch](https://img.shields.io/badge/OS-Arch-informational?style=for-the-badge&logo=archlinux&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
 ![Fish](https://img.shields.io/badge/Shell-Fish-informational?style=for-the-badge&logo=fishshell&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
 ![oh my pi](https://img.shields.io/badge/Editor-oh_my_pi-informational?style=for-the-badge&logo=pi&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
 ![Neovim](https://img.shields.io/badge/Editor-Neovim-informational?style=for-the-badge&logo=neovim&logoColor=E0E7FF&color=818CF8&labelColor=0F0F1A)
